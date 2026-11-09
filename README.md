@@ -1,16 +1,35 @@
-# React + Vite
+# Apex OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A management platform for a mobile detailing business, built with
+React, Supabase, and Vercel.
 
-Currently, two official plugins are available:
+**Live demo:** [your Vercel URL]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Screenshot of the dashboard](./docs/screenshot.png)
 
-## React Compiler
+## What it does
+- Manage customers, with multiple vehicles linked to each customer
+- Create jobs by selecting a customer, a vehicle, and a service
+- Dashboard comparing this month's revenue against last month's
+- Follow-up reminders: customers 60 days past their last completed
+  service are flagged, and one click opens a pre-filled email or SMS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
+React (Vite), Supabase (PostgreSQL + Auth), Vercel
 
-## Expanding the ESLint configuration
+## Data and security
+- Every table has a `user_id` column linked to the authenticated account
+- Row-level security policies on all tables ensure users can only read
+  and write their own data
+- New accounts are seeded with sample data so the demo works immediately
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+1. `git clone https://github.com/Melall462/apex-os.git`
+2. `npm install`
+3. Copy `.env.example` to `.env` and add your Supabase URL and anon key
+4. `npm run dev`
+
+## Possible improvements
+- Scheduled, automatic reminders using a Supabase edge function
+- Database-generated IDs instead of client-generated ones
+- Automated tests
