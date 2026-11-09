@@ -3,9 +3,7 @@
 A management platform for a mobile detailing business, built with
 React, Supabase, and Vercel.
 
-**Live demo:** [your Vercel URL]
-
-![Screenshot of the dashboard](./docs/screenshot.png)
+**Live demo:** https://apex-os-mehar.vercel.app/
 
 ## What it does
 - Manage customers, with multiple vehicles linked to each customer
